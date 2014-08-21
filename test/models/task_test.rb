@@ -9,6 +9,7 @@ class TaskTest < ActiveSupport::TestCase
     assert(task.complete?)
   end
 
+  
   test "an uncompleted task does not count toward velocity" do
     task = Task.new(size: 3)
     refute(task.counts_toward_velocity?)
@@ -28,6 +29,7 @@ class TaskTest < ActiveSupport::TestCase
     assert(task.counts_toward_velocity?)
     assert_equal(3, task.points_toward_velocity)
   end
+  
 
 end
 
